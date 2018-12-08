@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
 			success: true
 		})
 	}
-	res.end('hello world, again!')
+	res.end('hello world!')
 })
 
 server.listen(port, () => {
