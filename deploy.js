@@ -1,9 +1,10 @@
+const fs = require('fs')
 const http = require('http')
 const shell = require('shelljs')
 const port = 12315
 
 const server = http.createServer((req, res) => {
-	if (req.url === '/deploy' && req.method === 'post') {
+	if (req.url === '/deploy' && req.method === 'POST') {
 		if (!shell.which('git')) {
 			shell.echo('Sorry, this script requires git')
 			shell.exit(1)
@@ -18,8 +19,10 @@ const server = http.createServer((req, res) => {
 		res.end({
 			success: true
 		})
+	} else {
+		res.setHeader('content-type', 'text/html')
+		res.end(fs.readFileSync('./index.html'))
 	}
-	res.end('hello world!')
 })
 
 server.listen(port, () => {
