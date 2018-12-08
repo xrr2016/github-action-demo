@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
 			shell.exit(0)
 		}
 		res.setHeader('content-type', 'application/json')
-		res.end({ success: true })
+		res.end({ success: true, code: 0 })
 	}
 	res.setHeader('content-type', 'text/html')
 	res.end(fs.readFileSync('./index.html'))
