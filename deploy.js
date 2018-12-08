@@ -4,7 +4,7 @@ const shell = require('shelljs')
 const port = 12315
 
 const server = http.createServer((req, res) => {
-	if (req.url === '/deploy' && req.method === 'POST') {
+	if (req.url === '/deploy') {
 		if (!shell.which('git')) {
 			shell.echo('Sorry, this script requires git')
 			shell.exit(1)
@@ -16,13 +16,10 @@ const server = http.createServer((req, res) => {
 			shell.exit(0)
 		}
 		res.setHeader('content-type', 'application/json')
-		res.end({
-			success: true
-		})
-	} else {
-		res.setHeader('content-type', 'text/html')
-		res.end(fs.readFileSync('./index.html'))
+		res.end({ success: true })
 	}
+	res.setHeader('content-type', 'text/html')
+	res.end(fs.readFileSync('./index.html'))
 })
 
 server.listen(port, () => {
