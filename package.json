@@ -1,0 +1,24 @@
+{
+  "name": "github-webhook-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "deploy.js",
+  "dependencies": {
+    "shelljs": "^0.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xrr2016/github-webhook-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xrr2016/github-webhook-test/issues"
+  },
+  "homepage": "https://github.com/xrr2016/github-webhook-test#readme"
+}
