@@ -4,7 +4,7 @@ const shell = require('shelljs')
 const port = 12315
 
 const server = http.createServer((req, res) => {
-	if (req.url === '/deploy') {
+	if (req.url === '/deploy' && req.method === 'POST') {
 		if (!shell.which('git')) {
 			shell.echo('Sorry, this script requires git')
 			shell.exit(1)
