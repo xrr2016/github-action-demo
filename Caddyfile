@@ -3,7 +3,7 @@ gzip
 minify
 root /dist
 git {
-    repo git@github.com:xrr2016/github-webhook-test.git
-    hook /webhook "vue-webhook-demo"
+    repo git@github.com:xrr2016/github-webhook-test
+    hook /webhook vue-webhook-demo
     then npm run build
 }
